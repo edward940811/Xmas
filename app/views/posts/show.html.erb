@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+        <%= render "common/header"%>
+</head>
+
+<body bgcolor= "gray">
+ <div class="row" style="margin:40px"> 
+          <div class="col-md-11" style="display:block;margin:auto" >
+            <div class="jumbotron" style="display:block;margin:auto, margin-top:0px"  >
+                        <div class="panel panel-primary">
+                             <div class="panel panel-heading">
+                              <h2><%= @post.user_id %></h2>
+                             </div>
+                             <div class="panel-body">
+                              <p><%= @post.description %></p>
+                              <p> <%= link_to("Edit", edit_post_path(@post), class: "btn btn-primary pull-right")%>
+                                 <%= link_to("Delete", post_path(@post), class: "btn btn-primary pull-right", method: :delete)%></p>
+                             </div>
+                        </div>
+             
+	 	
+		 <div class="alert alert-info" role="alert">
+		
+		</div>
+	     </div>
+         </div>
+</body>
+

@@ -1,0 +1,27 @@
+<div class="col-md-12">
+
+  <h2 class="text-center"> 我的RESPONDS </h2>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th> Content </th>
+        <th> Group Name </th>
+        <th> Last Update </th>
+        <th colspan="2"></th>
+      </tr>
+    </thead>
+    
+    <tbody>
+      <% @responds.each do |respond| %>
+        <tr>
+          <td> <%= respond.content %> </td> 
+          <td> <%= respond.post.title %> </td> 
+          <td> <%= respond.updated_at %> </td> 
+          <td> <%= link_to('Edit', edit_post_respond_path(respond.post, respond), class: "btn btn-info btn-xs") %></td>
+          <td> <%= link_to('Delete', post_respond_path(respond.post, respond), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger btn-xs") %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
